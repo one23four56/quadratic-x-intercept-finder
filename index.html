@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation X-Intercept Finder</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <h1>Quadratic Equation X-Intercept Finder</h1>
+    <label for="from">From:</label>
+    <select id="from">
+        <option value="standard">Standard Form</option>
+        <option value="vertex">Vertex Form</option>
+    </select>
+
+    <p>Choose the equation type that you want to find the x-intercept for above, and enter values below. See the formulas section if you are unsure of what type your equation is. </p>
+    <form id="solvestandard">
+        <fieldset>
+            <legend>Enter values from a <strong>quadratic standard form</strong> equation</legend>
+            <label for="savalue">A = </label>
+            <input type="number" name="avalue" id="savalue" required min="1" max="1000000000">
+            <label for="sbvalue">B = </label>
+            <input type="number" name="bvalue" id="sbvalue" required min="0" max="1000000000">
+            <label for="scvalue">C = </label>
+            <input type="number" name="cvalue" id="scvalue" required min="0" max="1000000000">
+            <br>
+            <input type="submit" value="Solve">
+        </fieldset>
+    </form>
+    <form id="solvevertex" style="display: none;">
+        <fieldset>
+            <legend>Enter values from a <strong>quadratic vertex form</strong> equation</legend>
+            <label for="vavalue">A = </label>
+            <input type="number" name="avalue" id="vavalue" required min="1" max="1000000000">
+            <label for="vhvalue">H = </label>
+            <input type="number" name="hvalue" id="vhvalue" required min="0" max="1000000000">
+            <label for="vkvalue">K = </label>
+            <input type="number" name="kvalue" id="vkvalue" required min="0" max="1000000000">
+            <br>
+            <input type="submit" value="Solve">
+        </fieldset>
+    </form>
+    <button onclick="loadLast()">Last</button> <br>
+    <h2>Result: <code id="result"></code></h2>
+    <p id="formulapreview" style="text-align: center;"></p>
+    <button id="hidesteps" style="display: none;" onclick="hideSteps()">Hide Steps</button>
+    <br>
+    <hr>
+    <h2>Formulas: </h2>
+    <button onclick="showFormulas(this)">Show</button>
+    <div id="formulas" style="display: none;">
+        <h2 style="text-align: center;">
+            The Quadratic Formula is:
+            $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+            Quadratic Standard Form is:
+            $$y = ax^2 + bx + c$$
+            Quadratic Vertex Form is:
+            $$y = a(x-h)^2 + k$$
+        </h2>
+    </div>
+    <hr>
+    <h2>History: </h2>
+    <code id="history"></code>
+    <hr>
+    <p>Press <kbd>Ctrl + S</kbd> to download this site so you can use it offline.</p>
+    <script src="script.js"></script>
+</body>
+
+</html>
