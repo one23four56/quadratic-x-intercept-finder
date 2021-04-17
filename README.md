@@ -1,3 +1,7 @@
 # quadratic-x-intercept-finder
 A single page app that finds x-intercepts of quadratic equations using the quadratic formula.  
-This is designed to be all in a single HTML file so it is easy to transport. It is very annoying to code when it is like that though, so the files are kept separate until a release, when they are merged and minified. 
+
+This is designed to be all in a single HTML file so it is easy to transport. You can find the merged & minified version in the assets under the latest release.
+![image](https://user-images.githubusercontent.com/72141247/115127006-f0479300-9f98-11eb-8438-8440a5207e2e.png)
+
+![image](https://user-images.githubusercontent.com/72141247/115127015-06555380-9f99-11eb-9026-47e966ac7c3c.png)
