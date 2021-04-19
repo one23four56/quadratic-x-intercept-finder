@@ -26,10 +26,10 @@ document.getElementById("solvevertex").addEventListener('submit', event=>{
     document.getElementById("vavalue").value = ""; document.getElementById("vhvalue").value = ""; document.getElementById("vkvalue").value = ""
     let a = formData.get("avalue"); let h = formData.get("hvalue"); let k = formData.get("kvalue");
     let b = ((-h)+(-h))*a; let c = (((-h)**2)*a)+Number(k);
-    document.getElementById("formulapreview").innerText += `$$v = (${h},${k}), ${(k==0) ? `k = 0, x-int = (${h},${k})` : `k \\ne 0, x-int = Ø`}$$
+    document.getElementById("formulapreview").innerText += `${k>=0?`$$v = (${h},${k}), ${(k==0) ? `k = 0, x-int = (${h},${k})` : `k \\ne 0, x-int = Ø`}$$
     The x-intercept is ${(k==0) ? `(${h},${k})` : `Ø`}, but if you ignore that and do the calculations, this is what you get:
     (NOTE: If the numbers get too big (or small), the result will be wrong. Use the result above if the one listed is different.)
-
+`:''}
     ${`$$y = {${a}(x-${h})^2+${k}}$$`}
     ${`$$y = {${a}(x^2${((-h)+(-h)>=0) ? `+${((-h)+(-h))}x` : `${((-h)+(-h))}x`}${(((-h)**2)>=0) ? `+${((-h)**2)}` : ((-h)**2)})+${k}}$$`}
     ${`$$y = {${a}x^2${(b>=0) ? `+${b}x` : `${b}x`}${(c>=0) ? `+${c}` : c}}$$`}
