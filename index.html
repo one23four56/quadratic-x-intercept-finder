@@ -50,6 +50,10 @@
     <button id="hidesteps" style="display: none;" onclick="hideSteps()">Hide Steps</button>
     <br>
     <hr>
+    <h2>Graph:</h2>
+    <button onclick="toggleShowGraph(this)">Show</button>
+    <div id="calculator" style="width: 600px; height: 400px; margin: auto; display: none"></div>
+    <hr>
     <h2>Formulas: </h2>
     <button onclick="showFormulas(this)">Show</button>
     <div id="formulas" style="display: none;">
@@ -67,6 +71,7 @@
     <code id="history"></code>
     <hr>
     <p>Press <kbd>Ctrl + S</kbd> to download this site so you can use it offline.</p>
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script> <!-- Public API Key provided by Desmos. Not a secret -->
     <script src="script.js"></script>
 </body>
 
