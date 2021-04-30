@@ -48,6 +48,12 @@ function loadLast() {
 }
 function solve(a, b, c) {
     try {
+        //graph equation
+        var elt = document.getElementById('calculator');
+        if (elt.innerHTML != '') elt.innerHTML = '';
+        var calculator = Desmos.GraphingCalculator(elt);
+        calculator.setExpression({ id: 'graph1', latex: `y=${a}x^2+${b}x+${c}` });
+
         let res
         let discriminant = (b ** 2) - (4 * a * c)
         if (discriminant > 0) {
@@ -113,4 +119,14 @@ function showFormulas(button) {
 function hideSteps() {
     document.getElementById("formulapreview").innerText = ""
     document.getElementById("hidesteps").style.display = 'none'
+}
+function toggleShowGraph(button) {
+    var elt = document.getElementById('calculator');
+    if(elt.style.display == 'none') {
+        elt.style.display = 'block';
+        button.innerHTML = 'Hide';
+    } else {
+        elt.style.display = 'none';
+        button.innerHTML = 'Show';
+    }
 }
